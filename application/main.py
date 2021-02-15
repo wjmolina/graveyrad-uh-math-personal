@@ -64,7 +64,7 @@ def create_problem_post():
 
 @main.route('/update_server', methods=['POST'])
 def webhook():
-    repo = git.Repo('application')
+    repo = git.Repo('EsXAcademy')
     origin = repo.remotes.origin
     origin.pull()
     return 'successful webhook'
