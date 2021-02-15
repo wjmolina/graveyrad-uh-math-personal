@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    {{ current_user.name }}
+</h1>
+<h2 class="subtitle">
+    <img src="/static/ranks/{{ current_user.problems|length // 10 + 1 }}.png" style="width: 15%; height: auto;">
+</h2>
+<h2 class="subtitle">
+    {% if current_user.problems|length // 10 + 1 == 1 %}
+    Bronze
+    {% elif current_user.problems|length // 10 + 1 == 2 %}
+    Silver
+    {% elif current_user.problems|length // 10 + 1 == 3 %}
+    Gold
+    {% elif current_user.problems|length // 10 + 1 == 4 %}
+    Platinum
+    {% elif current_user.problems|length // 10 + 1 == 5 %}
+    Diamond
+    {% else %}
+    Master
+    {% endif %}
+</h2>
+<h2 class="subtitle">
+    <b>Problems Solved</b>: {{ current_user.problems|length }}
+</h2>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST" action="/create_problem" class="column is-10 is-offset-1">
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Title</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <input name="title" class="input" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Text</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <textarea name="text" class="textarea"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Answer</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <input name="answer" class="input" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-label">
+            <label class="label">Difficulty</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" value=1 name="difficulty" checked>
+                        1
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value=2 name="difficulty">
+                        2
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value=3 name="difficulty">
+                        3
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value=4 name="difficulty">
+                        4
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value=5 name="difficulty">
+                        5
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value=6 name="difficulty">
+                        6
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="button is-block is-primary is-fullwidth">Create</button>
+</form>
+{% endblock %}
