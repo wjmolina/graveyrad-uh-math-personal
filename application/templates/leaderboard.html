@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table is-bordered is-fullwidth is-striped">
+    <colgroup>
+        <col style="width: 22.5%">
+        <col style="width: 30%">
+        <col style="width: 25%">
+        <col style="width: 22.5%">
+    </colgroup>
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Rank</th>
+        <th>Solved</th>
+    </tr>
+    {% for person in people %}
+    <tr>
+        <td style="vertical-align: middle;">{{ loop.index }}</td>
+        <td style="vertical-align: middle;">{{ person.name }}</td>
+        <td style="vertical-align: middle;">
+            <img style="height: 30px;" src="/static/ranks/{{ person.problems|length // 10 + 1 }}.png">
+        </td>
+        <td style="vertical-align: middle;">{{ person.problems|length }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

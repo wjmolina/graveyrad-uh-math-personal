@@ -6,7 +6,7 @@ from flask_login import current_user, login_required
 from werkzeug.utils import redirect
 
 from . import db
-from .models import Problem
+from .models import Problem, User
 
 main = Blueprint('main', __name__)
 
@@ -68,3 +68,13 @@ def webhook():
     origin = repo.remotes.origin
     origin.pull()
     return 'successful webhook'
+
+
+@main.route('/leaderboard')
+def leaderboard():
+    people = sorted(
+        User.query.all(),
+        key=lambda person: len(person.problems),
+        reverse=True
+    )
+    return render_template('leaderboard.html', people=people)
