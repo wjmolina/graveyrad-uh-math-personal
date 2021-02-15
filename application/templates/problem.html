@@ -2,7 +2,11 @@
 
 {% block content %}
 <section class="section">
-    <h1 class="title">{{ problem.title }}</h1>
+    <h1 class="title">
+        <img style="height: 30px;" src="/static/ranks/{{ problem.difficulty }}.png">
+        {{ problem.title }}
+        <img style="height: 30px;" src="/static/ranks/{{ problem.difficulty }}.png">
+    </h1>
     <div class="has-text-left" style="white-space:pre-line">
         {{ problem.text }}
     </div>
