@@ -36,7 +36,7 @@ def problem_post(id):
         db.session.commit()
         flash('Success!', 'is-info')
     else:
-        flash('Failure', 'is-danger')
+        flash('Try Again', 'is-danger')
     return render_template('problem.html', problem=Problem.query.filter_by(id=id).first())
 
 
