@@ -14,7 +14,7 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def index():
     problems = Problem.query.all()
-    return render_template('index.html', problems=problems)
+    return render_template('index.html', problems=sorted(problems, key=lambda problem: problem.difficulty))
 
 
 @main.route('/profile')
