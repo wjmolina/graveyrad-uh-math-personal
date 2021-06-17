@@ -10,7 +10,7 @@ def index():
 
 
 @app.route("/update_server", methods=["POST"])
-def webhook():
+def update_server():
     repo = git.Repo("EsXAcademy")
     origin = repo.remotes.origin
     origin.pull()
