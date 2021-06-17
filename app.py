@@ -33,7 +33,7 @@ def index():
 
 @app.route("/update_server", methods=["POST"])
 def update_server():
-    git.Repo("EsXAcademy").remotes.origin.pull()
+    git.Repo().remotes.origin.pull()
 
     return "success"
 
