@@ -16,7 +16,7 @@ def about():
 
 @app.route("/update_server", methods=["POST"])
 def update_server():
-    repo = git.Repo("EsXAcademy")
+    repo = git.Repo("application")
     origin = repo.remotes.origin
     origin.pull()
     return "success"
