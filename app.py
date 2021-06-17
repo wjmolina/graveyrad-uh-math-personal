@@ -9,11 +9,6 @@ def index():
     return "Hello, World!"
 
 
-@app.route("/about")
-def about():
-    return "This is the About page..."
-
-
 @app.route("/update_server", methods=["POST"])
 def update_server():
     repo = git.Repo("EsXAcademy")
