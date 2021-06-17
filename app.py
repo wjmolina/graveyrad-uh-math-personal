@@ -1,3 +1,4 @@
+import git
 from flask import Flask
 
 app = Flask(__name__)
@@ -8,6 +9,9 @@ def index():
     return "Hello, World!"
 
 
-@app.route("/about")
-def about():
-    return "Hello, World!"
+@app.route("/update_server", methods=["POST"])
+def webhook():
+    repo = git.Repo("EsXAcademy")
+    origin = repo.remotes.origin
+    origin.pull()
+    return "success"
