@@ -1,13 +1,4 @@
-import enum
-
 from app import db
-
-
-class Result(enum.Enum):
-    one = "one"
-    two = "two"
-    draw = "draw"
-    ongoing = "ongoing"
 
 
 class Base(db.Model):
