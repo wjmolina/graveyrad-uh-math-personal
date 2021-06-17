@@ -11,7 +11,7 @@ def index():
 
 @app.route("/about")
 def about():
-    return "This is the About page."
+    return "This is the About page!"
 
 
 @app.route("/update_server", methods=["POST"])
