@@ -1,0 +1,7 @@
+CREATE TRIGGER IF NOT EXISTS user_updated
+AFTER
+UPDATE ON user BEGIN
+UPDATE user
+SET updated_at = CURRENT_TIMESTAMP
+WHERE _id = OLD._id;
+END;
