@@ -6,7 +6,12 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config.from_object("config")
+
+try:
+    app.config.from_object("config")
+except:
+    app.config.from_object("default_config")
+
 db = SQLAlchemy(app)
 
 from models import Comment, User
